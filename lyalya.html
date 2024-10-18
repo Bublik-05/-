@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidebar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+  />
+  <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+ 
+        /* Стили для контента */
+        .testimonials {
+            background-color: #e1f2ff;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            color: #2c6eae;
+            font-size: 24px;
+        }
+
+        .testimonial-box {
+            display: inline-block;
+            width: 45%;
+            margin: 10px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-box p {
+            color: #666;
+        }
+
+        .testimonial-box img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+
+        .contact {
+            background-color: #ffffff;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 24px;
+            color: #2c6eae;
+        }
+
+        .contact form {
+            display: inline-block;
+            text-align: left;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .contact input, .contact textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .contact button {
+            padding: 10px 20px;
+            background-color: #2c6eae;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .contact button:hover {
+            background-color: #1f5b91;
+        }
+
+     
+        header h1 {
+            color: rgb(40, 115, 165);
+            font-size: 36px;
+        }
+
+        header p {
+            color: #333;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0;
+            background: linear-gradient(to right, #9dc6ff, #ffffff);
+
+        }
+
+        .hero img {
+          padding-top: 2cm;
+            width: 350px;
+            border-radius: 5px;
+        }
+
+        .hero-content {
+            max-width: 500px;
+            margin-left: 20px;
+            
+        }
+
+        .hero-content h2 {
+            color: rgb(40, 115, 165);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .hero-content button {
+            background-color: #ffffff;
+            color: rgb(63, 132, 179);
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+           border: 2px solid rgb(63, 132, 179);;
+           
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+            background-color: #e0f1ff;
+        }
+
+        .feature-box {
+            text-align: center;
+            margin: 0 20px;
+        }
+
+        .feature-box img {
+            width: 50px;
+            height: auto;
+        }
+
+        .feature-box h3 {
+            color: rgb(40, 115, 165);
+        }
+
+        .services {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .services h2 {
+            color: rgb(40, 115, 165);
+            font-size: 28px;
+        }
+
+        .services-grid {
+    display: flex;
+    justify-content: space-around; /* Равномерное распределение карточек по ширине */
+    flex-wrap: wrap; /* Чтобы карточки переносились на следующую строку, если не помещаются */
+    gap: 0px; /* Промежуток между карточками */
+}
+.service-box {
+  
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px; /* Ширина каждой карточки */
+}
+        .service-box img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .service-box h3 {
+            color:rgb(40, 115, 165);
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #d8eaff;
+            color: #333;
+        }
+        p {
+      color: rgb(61, 61, 61); /* Цвет текста - черный */
+      font-size: 16px; /* Размер шрифта (можно изменить) */
+      font-family: Arial, sans-serif; /* Шрифт (можно изменить) */
+    }
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Logo</a></h1>
+        <ul class="menu">
+            <li><a href="#">О нас</a></li>
+            <li>
+                <a href="#">Услуги</a>
+                <ul class="submenu">
+                    <li><a href="#">Прогноз</a></li>
+                    <li><a href="chat.html">Анализ</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Профиль</a></li>
+        </ul>
+        <span class="material-symbols-outlined"> menu </span>
+    </nav>
+
+    <!-- Hero section -->
+    <div id="hero" class="hero">
+        <img src="доктор.png" alt="Доктор">
+        <div class="hero-content">
+            <h2>Высшее качество</h2>
+            <p>Чтобы узнать больше о наших клинических программах, просмотрите наш список медицинских услуг.</p>
+            <button>Связаться с нами</button>
+        </div>
+    </div>
+
+    <!-- Features section -->
+    <div id="features" class="features">
+        <div class="feature-box">
+            <img src="рука.png" alt="Медицинская помощь">
+            <h3>Медицинская помощь</h3>
+            <p>Качественная помощь и поддержка для всех пациентов.</p>
+        </div>
+        <div class="feature-box">
+            <img src="коробка.png" alt="Программы ухода">
+            <h3>Программы ухода</h3>
+            <p>Профессиональный уход для долгосрочного восстановления.</p>
+        </div>
+    </div>
+
+    <!-- Services section -->
+    <div id="services" class="services">
+        <h2>Медицинские услуги</h2>
+        <div class="services-grid">
+            <div class="service-box">
+                <img src="khirurg.jpg" alt="Госпиталисты">
+                <h3>Прогноз кардио-рисков</h3>
+                <p>Предсказание сердечного приступа и оценка риска на основе ваших данных.</p>
+                <button>Узнать больше</button>
+            </div>
+            <div class="service-box">
+                <img src="analyz-krovy-04-mob.webp" alt="Педиатрия">
+                <h3>МедАнализ Онлайн</h3>
+                <p>Онлайн анализ ваших медицинских данных с рекомендациями.</p>
+                <button onclick="window.location.href='chat.html'">Узнать больше</button> <!-- Изменено здесь -->
+            </div>
+            
+            
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div id="testimonials" class="testimonials">
+        <h2>Прочтите, что говорят наши клиенты</h2>
+
+        <div class="testimonial-box">
+            <img src="smiley-man-relaxing-outdoors_23-2148730025.jpg" alt="Customer Photo">
+            <p>Ляля лучшая!!!.</p>
+            <h3>Нуржан, 32 года</h3>
+        </div>
+
+        <div class="testimonial-box">
+            <img src="close-up-female-doctor-wear-medical-coat-stethoscope-working-hospital-healthcare-professional_140555-1139.jpg" alt="Customer Photo">
+            <p> Lyalya is the best!!</p>
+            <h3>Алия, 28 лет</h3>
+        </div>
+        <div class="testimonial-box">
+          <img src="close-up-female-doctor-wear-medical-coat-stethoscope-working-hospital-healthcare-professional_140555-1139.jpg" alt="Customer Photo">
+          <p>Am besten -> Lyalya</p>
+          <h3>Алия, 28 лет</h3>
+      </div>
+      <div class="testimonial-box">
+        <img src="close-up-female-doctor-wear-medical-coat-stethoscope-working-hospital-healthcare-professional_140555-1139.jpg" alt="Customer Photo">
+        <p> Абылай го в бравл</p>
+        <h3>Алия, 28 лет</h3>
+    </div>
+    </div>
+
+    <!-- Contact Form Section -->
+    <div id="contact" class="contact">
+      <img class="service-box" src="vrach4.jpg" alt="Customer Photo">
+
+        <h2>Свяжитесь с нами</h2>
+        <form>
+            <input type="text" name="name" placeholder="Ваше имя">
+            <input type="email" name="email" placeholder="Ваш email">
+            <textarea name="message" placeholder="Ваше сообщение"></textarea>
+            <button type="submit">Отправить сообщение</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Медцентр Здоровье</p>
+        <p>Email: info@medcenter.kz</p>
+    </footer>
+
+</body>
+</html>
