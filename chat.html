@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    
+    <link rel="stylesheet" href="chat.css">
+    <style>
+        .chat-container {
+            margin-top: 90px; /* Отступ сверху, равный высоте панели */
+        }
+        /* Модальное окно */
+        .modal {
+            display: none; /* Скрыто по умолчанию */
+            position: fixed; /* Остается на месте */
+            z-index: 1000; /* На переднем плане */
+            left: 0;
+            top: 0;
+            width: 100%; /* Полная ширина */
+            height: 100%; /* Полная высота */
+            overflow: auto; /* Включает прокрутку, если необходимо */
+            background-color: rgb(0, 0, 0); /* Черный фон с прозрачностью */
+            background-color: rgba(0, 0, 0, 0.9); /* Черный фон с прозрачностью */
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%; /* Уменьшенная ширина */
+            max-width: 700px; /* Максимальная ширина */
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1><a href="lyalya.html">Logo</a></h1>
+        <ul class="menu">
+             <li><a href="#">О нас</a></li>
+             <li>
+                <a href="#">Услуги</a>
+                <ul class="submenu">
+                    <li><a href="#">Прогноз</a></li>
+                    <li><a href="chat.html">Анализ</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+             </li>
+             <li><a href="#">Профиль</a></li>
+         </ul>
+         <span class="material-symbols-outlined">menu</span>
+     </nav>
+    
+    <div class="chat-container">
+        <!-- Список старых чатов слева -->
+        <div class="chat-list">
+            <h3>Сохраненные чаты</h3>
+            <ul id="saved-chats"></ul>
+        </div>
+
+        <div class="chat-window">
+            <div class="chat-header">
+                <h2>Анализ медицинских данных</h2>
+                <button class="new-chat-btn" onclick="createNewChat()">Создать новый чат</button>
+            </div>
+
+            <div class="chat-image" id="chat-image">
+                <img src="images.jpeg" alt="Медицинское изображение" style="width: 100%; height: auto;">
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <!-- Сообщения будут добавляться здесь -->
+            </div>
+            <div class="chat-input-section">
+                <input type="text" id="message-input" placeholder="Введите сообщение...">
+                <input type="file" id="file-input">
+                <button onclick="sendMessage()">Отправить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для увеличенного изображения -->
+    <div id="modal" class="modal" style="display: none;">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modal-image" class="modal-content" />
+    </div>
+
+    <script src="chat.js"></script><!-- Подключаем файл с JavaScript -->
+</body>
+</html>
