@@ -1,178 +1,75 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Онлайн анализ медицинских данных</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-  />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    
     <link rel="stylesheet" href="chat.css">
     <style>
-        /* Основные стили для body */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-        }
-
-        /* Стили для навигационного меню */
-        header {
-            background-color: #2c6eae; /* Цвет фона заголовка */
-            padding: 10px 20px; /* Отступы для заголовка */
-            color: white; /* Цвет текста */
-            position: fixed; /* Фиксированное положение */
-            top: 0; /* Отступ от верхней части окна */
-            left: 0; /* Отступ от левой части окна */
-            width: 100%; /* Ширина на всю ширину окна */
-            z-index: 1000; /* Убедитесь, что меню будет поверх другого контента */
-            display: flex; /* Flexbox для расположения элементов */
-            justify-content: space-between; /* Выравнивание элементов */
-            align-items: center; /* Вертикальное выравнивание элементов */
-        }
-
-        .logo {
-            font-size: 24px; /* Размер шрифта для логотипа */
-            font-weight: bold; /* Жирный шрифт */
-        }
-
-        nav {
-            display: flex; /* Flexbox для расположения элементов */
-            align-items: center; /* Вертикальное выравнивание элементов */
-        }
-
-        .menu {
-            list-style: none; /* Убираем маркеры списка */
-            padding: 0; /* Убираем отступы */
-            display: flex; /* Flexbox для горизонтального расположения */
-            margin: 0; /* Убираем отступы */
-        }
-
-        .menu li {
-            position: relative; /* Для подменю */
-            margin-right: 20px; /* Отступ между элементами меню */
-        }
-
-        .menu a {
-            color: white; /* Цвет ссылок */
-            text-decoration: none; /* Убираем подчеркивание ссылок */
-            padding: 10px; /* Отступы для более удобного нажатия */
-            transition: background-color 0.3s; /* Плавный переход при наведении */
-        }
-
-        .menu a:hover {
-            background-color: rgba(255, 255, 255, 0.2); /* Цвет фона при наведении */
-            border-radius: 5px; /* Закругленные углы */
-        }
-
-        /* Стили для подменю */
-        .submenu {
-            display: none; /* Скрыть подменю по умолчанию */
-            position: absolute; /* Позиционирование относительно родительского элемента */
-            background-color: #2c6eae; /* Цвет фона подменю */
-            margin-top: 10px; /* Отступ сверху */
-            list-style: none; /* Убираем маркеры списка */
-            padding: 0; /* Убираем отступы */
-            z-index: 1001; /* Обеспечиваем, чтобы подменю было над другими элементами */
-        }
-
-        .menu li:hover .submenu {
-            display: block; /* Показываем подменю при наведении */
-        }
-
-        .submenu li {
-            margin: 0; /* Убираем отступы */
-        }
-
-        .submenu a {
-            padding: 10px; /* Отступы для удобства нажатия */
-            display: block; /* Сделаем ссылки блочными для улучшения кликабельности */
-        }
-
-        /* Стили для контейнера чата */
         .chat-container {
-            display: flex; /* Flexbox для размещения элементов чата */
-            height: calc(100vh - 60px); /* Высота контейнера чата с учетом высоты заголовка */
-            margin-top: 100px; /* Отступ сверху, чтобы избежать перекрытия заголовком */
+            margin-top: 90px; /* Отступ сверху, равный высоте панели */
+        }
+        /* Модальное окно */
+        .modal {
+            display: none; /* Скрыто по умолчанию */
+            position: fixed; /* Остается на месте */
+            z-index: 1000; /* На переднем плане */
+            left: 0;
+            top: 0;
+            width: 100%; /* Полная ширина */
+            height: 100%; /* Полная высота */
+            overflow: auto; /* Включает прокрутку, если необходимо */
+            background-color: rgb(0, 0, 0); /* Черный фон с прозрачностью */
+            background-color: rgba(0, 0, 0, 0.9); /* Черный фон с прозрачностью */
         }
 
-        .chat-list {
-            width: 25%; /* Ширина списка чатов */
-            border-right: 1px solid #ccc; /* Граница справа */
-            padding: 20px; /* Отступы */
-            overflow-y: auto; /* Прокрутка при переполнении */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%; /* Уменьшенная ширина */
+            max-width: 700px; /* Максимальная ширина */
         }
 
-        .chat-window {
-            width: 100%; /* Ширина окна чата */
-            display: flex;
-            flex-direction: column; /* Вертикальная ориентация */
-        }
-
-        .chat-header {
-            background-color: #2c6eae; /* Цвет фона заголовка */
-            padding: 10px; /* Отступы для заголовка */
-            display: flex;
-            justify-content: space-between; /* Выравнивание элементов */
-            margin-top: 0px; /* Отступ сверху для заголовка чата */
-        }
-
-        .chat-messages {
-            flex-grow: 1; /* Занимает все доступное пространство */
-            padding: 10px; /* Отступы */
-            overflow-y: auto; /* Прокрутка при переполнении */
-            margin-bottom: 10px; /* Отступ снизу для области сообщений */
-        }
-
-        .chat-input-section {
-            padding: 10px; /* Отступы */
-            display: flex; /* Горизонтальное расположение элементов */
-        }
-
-        #message-input {
-            flex-grow: 1; /* Занимает все доступное пространство */
-            padding: 10px; /* Отступы */
-            margin-right: 10px; /* Отступ справа */
-        }
-
-        #file-input {
-            margin-right: 10px; /* Отступ справа */
-        }
-
-        /* Добавим отступ для заголовка списка чатов */
-        .chat-list h3 {
-            margin-top: 0; /* Убираем верхний отступ для заголовка списка */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <h1 class="logo"><a href="lyalya.html" style="color: white; text-decoration: none;">Logo</a></h1>
-            <ul class="menu">
-                <li><a href="#">О нас</a></li>
-                <li>
-                    <a href="#">Услуги</a>
-                    <ul class="submenu">
-                        <li><a href="#">Прогноз</a></li>
-                        <li><a href="#">Анализ</a></li>
-                        <li><a href="#">Контакты</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Профиль</a></li>
-            </ul>
-            
-        </nav>
-    </header>
-
+    <nav>
+        <h1><a href="lyalya.html">Logo</a></h1>
+        <ul class="menu">
+             <li><a href="#">О нас</a></li>
+             <li>
+                <a href="#">Услуги</a>
+                <ul class="submenu">
+                    <li><a href="#">Прогноз</a></li>
+                    <li><a href="chat.html">Анализ</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+             </li>
+             <li><a href="#">Профиль</a></li>
+         </ul>
+         <span class="material-symbols-outlined">menu</span>
+     </nav>
+    
     <div class="chat-container">
         <!-- Список старых чатов слева -->
         <div class="chat-list">
@@ -186,7 +83,6 @@
                 <button class="new-chat-btn" onclick="createNewChat()">Создать новый чат</button>
             </div>
 
-            <!-- Изображение занимает всю область чата -->
             <div class="chat-image" id="chat-image">
                 <img src="images.jpeg" alt="Медицинское изображение" style="width: 100%; height: auto;">
             </div>
@@ -202,6 +98,12 @@
         </div>
     </div>
 
-    <script src="chat.js"></script> <!-- Подключаем файл с JavaScript -->
+    <!-- Модальное окно для увеличенного изображения -->
+    <div id="modal" class="modal" style="display: none;">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modal-image" class="modal-content" />
+    </div>
+
+    <script src="chat.js"></script><!-- Подключаем файл с JavaScript -->
 </body>
 </html>
