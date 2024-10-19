@@ -60,7 +60,7 @@
              <li>
                 <a href="#">Услуги</a>
                 <ul class="submenu">
-                    <li><a href="#">Прогноз</a></li>
+                    <li><a href="lyalya2.html">Прогноз </a></li>
                     <li><a href="chat.html">Анализ</a></li>
                     <li><a href="#">Контакты</a></li>
                 </ul>
@@ -72,18 +72,15 @@
     
     <div class="chat-container">
         <!-- Список старых чатов слева -->
-        <div class="chat-list">
-            <h3>Сохраненные чаты</h3>
-            <ul id="saved-chats"></ul>
-        </div>
+       
 
         <div class="chat-window">
             <div class="chat-header">
                 <h2>Анализ медицинских данных</h2>
-                <button class="new-chat-btn" onclick="createNewChat()">Создать новый чат</button>
+                <!--<button class="new-chat-btn" onclick="createNewChat()">Создать новый чат</button>-->
             </div>
 
-            <div class="images/chat-image" id=images/chat-image">
+            <div class="chat-image" id="chat-image">
                 <img src="images/images.jpeg" alt="Медицинское изображение" style="width: 100%; height: auto;">
             </div>
 
@@ -101,7 +98,7 @@
     <!-- Модальное окно для увеличенного изображения -->
     <div id="modal" class="modal" style="display: none;">
         <span class="close" onclick="closeModal()">&times;</span>
-        <img id="images/modal-image" class="modal-content" />
+        <img id="modal-image" class="modal-content" />
     </div>
 
     <script src="chat.js"></script><!-- Подключаем файл с JavaScript -->
