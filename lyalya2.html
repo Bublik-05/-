@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Data Form</title>
+    <link rel="stylesheet" href="lyalya.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+  <nav>
+    <h1>Logo</h1>
+    <ul class="menu">
+      <li><a>О нас</a></li>
+      <li>
+        <a>Услуги</a>
+        <ul class="submenu">
+          <li><a>Прогноз </a></li>
+          <li><a>Анализ</a></li>
+          <li><a>Контакты</a></li>
+        </ul>
+      </li>
+      <li><a>Профиль</a></li>
+    </ul>
+    <span class="material-symbols-outlined"> menu </span>
+  </nav>
+ 
+<div class="wrapper">
+    <div class="form-container">
+        <h2>Enter Your Health Data</h2>
+        <form action="#" method="post">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="1" max="120" required>
+
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sex" required>
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+            </select>
+
+            <label for="chest_pain">Chest Pain Type (0-3):</label>
+            <input type="number" id="chest_pain" name="chest_pain" min="0" max="3" required>
+
+            <label for="resting_bp">Resting Blood Pressure:</label>
+            <input type="number" id="resting_bp" name="resting_bp" min="50" max="250" required>
+
+            <label for="cholesterol">Cholesterol:</label>
+            <input type="number" id="cholesterol" name="cholesterol" min="100" max="500" required>
+
+            <label for="fasting_bs">Fasting Blood Sugar:</label>
+            <select id="fasting_bs" name="fasting_bs" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <label for="resting_ecg">Resting ECG (0-2):</label>
+            <input type="number" id="resting_ecg" name="resting_ecg" min="0" max="2" required>
+
+            <label for="max_hr">Max Heart Rate:</label>
+            <input type="number" id="max_hr" name="max_hr" min="60" max="220" required>
+
+            <label for="exercise_angina">Exercise Induced Angina:</label>
+            <select id="exercise_angina" name="exercise_angina" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <label for="oldpeak">Oldpeak (0-6.2):</label>
+            <input type="number" step="0.1" id="oldpeak" name="oldpeak" min="0" max="6.2" required>
+
+            <label for="slope">Slope of the Peak ST Segment (0-2):</label>
+            <input type="number" id="slope" name="slope" min="0" max="2" required>
+
+            <label for="vessels">Number of Major Vessels (0-3):</label>
+            <input type="number" id="vessels" name="vessels" min="0" max="3" required>
+
+            <label for="thal">Thalassemia (0-3):</label>
+            <input type="number" id="thal" name="thal" min="0" max="3" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+  </div>
+</body>
+</html>
