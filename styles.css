@@ -22,7 +22,18 @@ nav > :is(h1, span.material-symbols-outlined) {
   display: grid;
   place-items: center;
 }
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0056b3; /* Цвет фона */
+  color: white; /* Цвет текста */
+  text-decoration: none; /* Убирает подчеркивание */
+  border-radius: 5px; /* Закругленные углы */
+}
 
+.button:hover {
+  background-color: #0056b3; /* Цвет фона при наведении */
+}
 nav h1 {
   color: rgb(40, 115, 165);;
   background: white;
@@ -60,7 +71,7 @@ a {
 }
 
 .menu > li:hover > a {
-  color: #fff;
+  color: black;
 }
 
 .menu > li:hover > a::before {
