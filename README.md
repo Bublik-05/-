@@ -48,9 +48,9 @@ project/
 ├── chatserver.py
 ├── heart.csv
 ├── heartproject.ipynb
-├── lyalya.css
-├── lyalya.html
-├── lyalya2.html
+├── mainpage.css
+├── mainpage.html
+├── forecast.html
 ├── script.js
 ├── styles.css
 ├── requirements.txt
